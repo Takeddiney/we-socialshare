@@ -1,5 +1,7 @@
 <template>
-  <button :class="[
+  <a
+  :href="shareurl"
+  :class="[
    'we-share-button',
    'we-share-button--' + mediatype,
    'we-share-button--' + size,
@@ -30,7 +32,7 @@ props: {
     return ["small", "default", "large"].indexOf(x) !== -1;
    }
   },
-  url: {
+  shareurl: {
     type:String,
     default:"#"
   }
@@ -51,6 +53,7 @@ props: {
  background-size: 50%;
  background-repeat: no-repeat;
  background-position: center;
+ margin-right:8px;
 }
 
 /* --> COLORS <-- */
@@ -58,6 +61,7 @@ props: {
 .we-share-button--linkedin {
  background-color: #0077b5;
  background-image:url('./weshare/icons/linkedin.svg');
+ background-size:60%;
 }
 
 .we-share-button--twitter {

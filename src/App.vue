@@ -1,5 +1,7 @@
 <template>
-  <WeShare :rounded="true" mediatype="twitter" size="large"/>
+  <WeShare :rounded="true" mediatype="twitter" size="large" shareurl="#"/>
+  <WeShare :rounded="true" mediatype="facebook" size="large" shareurl="#"/>
+  <WeShare :rounded="true" mediatype="linkedin" size="large" shareurl="#"/>
 </template>
 
 <script>
