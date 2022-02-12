@@ -1,16 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <WeShare :rounded="true" mediatype="twitter" size="large" shareurl="#"/>
+  <WeShare :rounded="true" mediatype="facebook" size="large" shareurl="#"/>
+  <WeShare :rounded="true" mediatype="linkedin" size="large" shareurl="#"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import WeShare from './components/WeShare.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    WeShare
+}
 }
 </script>
 
