@@ -1,15 +1,15 @@
 <template>
-  <HelloWorld :rounded="true" mediatype="twitter" size="large"/>
+  <WeShare :rounded="true" mediatype="twitter" size="large"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import WeShare from './components/WeShare.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    WeShare
+}
 }
 </script>
 
