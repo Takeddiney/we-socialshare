@@ -1,6 +1,6 @@
 <template>
   <a
-  :href="shareurl"
+  :href="baseurl()"
   :class="[
    'we-share-button',
    'we-share-button--' + mediatype,
@@ -16,9 +16,8 @@ export default {
 props: {
   mediatype: {
    type: String,
-   default: "linkedin",
    validator(x) {
-     return ["linkedin", "twitter", "facebook"].indexOf(x) !== -1;
+     return ["linkedin", "twitter", "facebook", "whatsapp", "telegram", "weibo"].indexOf(x) !== -1;
    }
   },
   rounded: {
@@ -32,12 +31,42 @@ props: {
     return ["small", "default", "large"].indexOf(x) !== -1;
    }
   },
-  shareurl: {
-    type:String,
-    default:"#"
+  link: {
+    type:String
+  },
+  title: {
+    type:String
+  },
+  body: {
+    type:String
+  },
+  hashtags: {
+    type:String
   }
- }
-}
+ },
+  methods: {
+    baseurl() {
+    if(this.mediatype==="linkedin") {
+     return `https://www.linkedin.com/sharing/share-offsite/?url=${this.link}`
+    }
+    if(this.mediatype==="twitter") {
+     return `https://twitter.com/intent/tweet?text=${this.body}&url=${this.link}&hashtags=${this.hashtags}`
+    }
+    if(this.mediatype==="facebook") {
+     return `https://www.facebook.com/sharer/sharer.php?u=${this.link}&title=${this.title}&description=${this.body}`
+    }
+    if(this.mediatype==="whatsapp") {
+     return `https://api.whatsapp.com/send?text=${this.body}`
+    }
+    if(this.mediatype==="telegram") {
+     return `https://t.me/share/url?url=${this.link}&text=${this.body}`
+    }
+    if(this.mediatype==="weibo") {
+     return `http://service.weibo.com/share/share.php?url=${this.link}&title=${this.title}`
+    }
+    }
+  },
+  }
 </script>
 
 <style>
@@ -54,6 +83,8 @@ props: {
  background-repeat: no-repeat;
  background-position: center;
  margin-right:8px;
+ width: 15px;
+ height: 15px;
 }
 
 /* --> COLORS <-- */
@@ -74,6 +105,21 @@ props: {
  background-image:url('./weshare/icons/facebook.svg');
 }
 
+.we-share-button--whatsapp {
+ background-color: #25D366;
+ background-image:url('./weshare/icons/whatsapp.svg');
+}
+
+.we-share-button--telegram {
+ background-color: #229ED9;
+ background-image:url('./weshare/icons/telegram.svg');
+}
+
+.we-share-button--weibo {
+ background-color: #df2029;
+ background-image:url('./weshare/icons/weibo.svg');
+ background-size:60%;
+}
 /* --> SIZES <-- */
 
 .we-share-button--small {
@@ -94,6 +140,6 @@ props: {
 /* --> BOOLEANS <-- */
 
 .we-share-button--rounded {
- border-radius: 20px;
+ border-radius: 100%;
 }
 </style>
