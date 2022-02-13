@@ -91,33 +91,33 @@ props: {
 
 .we-share-button--linkedin {
  background-color: #0077b5;
- background-image:url('./weshare/icons/linkedin.svg');
+ background-image:url('./icons/linkedin.svg');
  background-size:60%;
 }
 
 .we-share-button--twitter {
  background-color: #1DA1F2;
- background-image:url('./weshare/icons/twitter.svg');
+ background-image:url('./icons/twitter.svg');
 }
 
 .we-share-button--facebook {
  background-color: #4267B2;
- background-image:url('./weshare/icons/facebook.svg');
+ background-image:url('./icons/facebook.svg');
 }
 
 .we-share-button--whatsapp {
  background-color: #25D366;
- background-image:url('./weshare/icons/whatsapp.svg');
+ background-image:url('./icons/whatsapp.svg');
 }
 
 .we-share-button--telegram {
  background-color: #229ED9;
- background-image:url('./weshare/icons/telegram.svg');
+ background-image:url('./icons/telegram.svg');
 }
 
 .we-share-button--weibo {
  background-color: #df2029;
- background-image:url('./weshare/icons/weibo.svg');
+ background-image:url('./icons/weibo.svg');
  background-size:60%;
 }
 /* --> SIZES <-- */

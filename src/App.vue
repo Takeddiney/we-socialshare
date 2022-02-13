@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import WeShare from './components/WeShare.vue'
+import WeShare from './components/weshare/WeShare.vue'
 export default {
   name: 'App',
   components: {
